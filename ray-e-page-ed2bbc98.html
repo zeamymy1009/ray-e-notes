@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷竞技 — 了解竞技平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f7fa;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2b 0%, #1b2f44 100%);
+            color: #e4edf5;
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
+            border-bottom: 4px solid #f1c40f;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            color: #f1c40f;
+        }
+
+        .hero p {
+            max-width: 660px;
+            margin: 0 auto 1.2rem;
+            font-size: 1.15rem;
+            opacity: 0.9;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(241, 196, 15, 0.18);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(241, 196, 15, 0.25);
+        }
+
+        /* 正文区浅色背景 */
+        .content-wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .section:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e9edf2;
+            color: #0b1a2b;
+        }
+
+        .section h2 i {
+            margin-right: 0.4rem;
+            color: #f1c40f;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .highlight-item {
+            background: #f8faff;
+            border-left: 4px solid #f1c40f;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #0b1a2b;
+            margin-bottom: 0.2rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #2b3e54;
+        }
+
+        .faq-mini {
+            margin-top: 1rem;
+        }
+
+        .faq-mini dt {
+            font-weight: 600;
+            margin: 0.8rem 0 0.2rem;
+            color: #1a2b3a;
+            font-size: 1rem;
+        }
+
+        .faq-mini dd {
+            margin-left: 0.2rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid #e2e8f0;
+            color: #2d4159;
+        }
+
+        .note-box {
+            background: #f0f4fa;
+            border-radius: 12px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.2rem 0 0.2rem;
+            font-size: 0.95rem;
+            border: 1px solid #dce3ec;
+        }
+
+        .note-box strong {
+            color: #0b1a2b;
+        }
+
+        .link-highlight {
+            color: #1d5b8e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #9bb7d1;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .link-highlight:hover {
+            color: #0a2d4a;
+            border-bottom-style: solid;
+            border-color: #f1c40f;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            color: #1e2b3c;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: 0.15s;
+            margin-top: 0.4rem;
+        }
+
+        .btn-soft:hover {
+            border-color: #f1c40f;
+            background: #fefae6;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #5b6f84;
+            font-size: 0.9rem;
+            padding: 2rem 0 0.5rem;
+            border-top: 1px solid #dce3ec;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .content-wrap {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .section {
+                padding: 1.4rem 1.2rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.5rem 1rem 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>⚡ 了解 <span>雷竞技</span></h1>
+    <p>一个聚焦电子竞技内容与资讯的线上平台。如果你希望通过一个聚合入口快速了解比赛动态、战队信息、赛事日程，<a href="https://ray-e-sports.com" class="link-highlight" style="color:#f1c40f; border-color: rgba(241,196,15,0.4);">雷竞技</a> 提供了相对清晰的信息框架，适合作为日常浏览的起点。</p>
+    <div class="tagline">🎮 不炒作 · 不夸张 · 真实信息聚合</div>
+</header>
+
+<main class="content-wrap">
+
+    <!-- 平台摘要 -->
+    <section class="section">
+        <h2>📋 平台摘要</h2>
+        <p><strong>雷竞技</strong> 不是一个游戏客户端，也不是比赛直播平台——它更像一个<span style="font-weight:500;">信息导航与数据参考站点</span>。你可以在这里找到主流电竞项目的赛程预告、战队近期战绩、选手基础数据以及相关赛事新闻。网站结构偏向工具化，适合赛前快速查看对阵、赛后回顾比分。</p>
+        <p style="margin-top:0.6rem;">访问 <a href="https://ray-e-sports.com" class="link-highlight">雷竞技</a> 后，你首先看到的是干净的赛程卡片和筛选栏，没有过度营销的内容，整体节奏偏务实。对于想要追踪特定联赛（如 LPL、CS2 赛事、Dota 2 锦标赛）的用户，这个网站提供了一站式概览。</p>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <section class="section">
+        <h2>✨ 亮点速览</h2>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <strong>🔹 赛程聚合</strong>
+                <p>覆盖多项主流电竞的 upcoming matches，自动更新，无需到处翻找官方赛程表。</p>
+            </div>
+            <div class="highlight-item">
+                <strong>🔹 战队与选手索引</strong>
+                <p>每支战队、每位选手都有独立页面，包含近期胜负纪录、常用英雄/地图等。</p>
+            </div>
+            <div class="highlight-item">
+                <strong>🔹 结果回溯</strong>
+                <p>已完成比赛保留详细比分，方便复盘或查询历史交锋记录。</p>
+            </div>
+            <div class="highlight-item">
+                <strong>🔹 轻量界面</strong>
+                <p>没有大量弹窗或自动播放视频，降低浏览负担，加载速度较快。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用建议 + 场景 -->
+    <section class="section">
+        <h2>💡 使用建议 & 场景</h2>
+        <p>根据网站的实际功能定位，以下场景比较适合将 <a href="https://ray-e-sports.com" class="link-highlight">雷竞技</a> 加入书签：</p>
+        <ul style="margin:0.8rem 0 0.2rem 1.5rem; color:#2b3e54;">
+            <li>赛前查看未来三天的比赛安排，提前规划观看时间。</li>
+            <li>赛后快速查看比赛结果，了解比分走势。</li>
+            <li>需要查阅某支战队近期状态时，直接搜索队名即可。</li>
+            <li>作为全球电竞资讯的补充来源，与主流直播平台、社区搭配使用。</li>
+        </ul>
+        <div class="note-box">
+            <strong>📌 一点提醒：</strong> 该网站不提供比赛直播或回放视频，主要提供结构化的赛事数据与摘要。如果需要观看比赛，仍需前往相应直播平台。
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 + 可信说明 -->
+    <section class="section">
+        <h2>❓ 常见问题摘要</h2>
+        <dl class="faq-mini">
+            <dt>Q：雷竞技的数据来源可靠吗？</dt>
+            <dd>平台数据整合自公开的赛事官方接口与合作数据商，更新频率较高，但如遇非常规赛事可能存在延迟或缺失。建议交叉核对关键场次。</dd>
+            <dt>Q：需要注册才能使用吗？</dt>
+            <dd>浏览赛程、战队信息等基础内容无需注册。部分个性化功能（如收藏战队）可能需要简易账号，但整体以访客友好为主。</dd>
+            <dt>Q：是否包含博彩或抽奖内容？</dt>
+            <dd>不包含。网站性质为信息聚合与数据展示，没有博彩、投注或诱导点击的广告内容，页面设计比较克制。</dd>
+            <dt>Q：移动端体验如何？</dt>
+            <dd>网站采用响应式设计，手机浏览器下卡片会自动调整为一列，菜单折叠，触控操作基本流畅。</dd>
+        </dl>
+        <div style="margin-top:1.2rem; padding:0.8rem 0 0 0; border-top:1px solid #e7ecf2;">
+            <p style="color:#2b3e54;">如果你对某场比赛或战队数据有疑问，可以直接在站内搜索，或通过页面底部的联系渠道反馈。整体来说，<a href="https://ray-e-sports.com" class="link-highlight">雷竞技</a> 是一个值得日常浏览的电竞数据参考点，适合保持信息同步。</p>
+        </div>
+    </section>
+
+    <!-- 克制说明 -->
+    <section class="section" style="background:#f8faff;">
+        <h2>📎 关于本页</h2>
+        <p>本介绍页基于对 <a href="https://ray-e-sports.com" class="link-highlight">雷竞技</a> 的公开内容整理而成，旨在帮助新用户快速了解网站用途与边界。所有描述均基于实际功能，不包含任何未经证实的承诺或暗示。电竞信息瞬息万变，建议以网站实时数据为准。</p>
+        <p style="margin-top:0.6rem; font-size:0.9rem; color:#3f5670;">—— 一份简洁但完整的产品说明，仅用于信息展示。</p>
+    </section>
+
+    <div class="footer-note">
+        雷竞技 · ray-e-sports.com
+    </div>
+
+</main>
+
+</body>
+</html>
